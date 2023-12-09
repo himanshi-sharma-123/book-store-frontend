@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBlog } from "react-icons/fa";
 import {
@@ -7,10 +7,13 @@ import {
   AiOutlineSearch,
   AiOutlineUser,
 } from "react-icons/ai";
+import { AuthContext } from "../contact/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   //toggle menu
   const toggleMenu = () => {
@@ -71,6 +74,7 @@ const Navbar = () => {
           <div className="space-x-12 hidden lg:flex items-center">
             <button>
               <AiOutlineMenu className="w-5 hover:text-blue-700" />
+              {user ? user.email : ""}
             </button>
           </div>
 
