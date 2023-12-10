@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBlog } from "react-icons/fa";
+import logo from "../../src/assets/logo.jpg";
 import {
   AiOutlineMenu,
   AiOutlineClose,
@@ -48,13 +49,14 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center text-base gap-8">
           {/*logo*/}
-          <Link
+          <img className="w-20 h-20" src={logo} alt="" />
+          {/* <Link
             to="/"
             className="text-2xl font-bold text-blue-700 flex items-center gap-2"
           >
             <FaBlog className="inline-block" />
             Books
-          </Link>
+          </Link> */}
 
           {/* nav items for large device */}
 
