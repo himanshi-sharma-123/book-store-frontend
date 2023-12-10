@@ -1,6 +1,7 @@
 import { Sidebar } from "flowbite-react";
 import {
   HiArrowSmRight,
+  HiBookOpen,
   HiChartPie,
   HiInbox,
   HiOutlineCloudUpload,
@@ -43,8 +44,8 @@ const SideBar = () => {
           {/* <Sidebar.Item href="#" icon={HiUser}>
             Users
           </Sidebar.Item> */}
-          <Sidebar.Item href="/shop" icon={HiShoppingBag}>
-            Products
+          <Sidebar.Item href="/shop" icon={HiBookOpen}>
+            Books
           </Sidebar.Item>
           <Sidebar.Item href="/login" icon={HiArrowSmRight}>
             Sign In

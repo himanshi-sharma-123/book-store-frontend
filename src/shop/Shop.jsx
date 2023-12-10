@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "flowbite-react";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [books, setBooks] = useState([]);
@@ -24,7 +25,7 @@ const Shop = () => {
               far, in reverse chronological order.
             </p>
             <button className="bg-blue-700 font-semibold text-white py-1 rounded">
-              Shop now
+              <Link to={book.bookPDFURL}>Shop now </Link>
             </button>
           </Card>
         ))}

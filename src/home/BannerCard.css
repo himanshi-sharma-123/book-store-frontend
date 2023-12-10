@@ -37,7 +37,7 @@
   background-color: rgb(180, 10, 47);
 }
 
-..banner .swiper-slide:nth-child(7n) {
+.banner .swiper-slide:nth-child(7n) {
   background-color: rgb(35, 99, 19);
 }
 
