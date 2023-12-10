@@ -28,7 +28,7 @@ const UploadBook = () => {
   );
 
   const handleChangeSelectedValue = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setSelectedBookCategory(event.target.value);
   };
 
@@ -42,6 +42,7 @@ const UploadBook = () => {
     const category = form.categoryName.value;
     const bookDescription = form.bookDescription.value;
     const bookPDFURL = form.bookPDFURL.value;
+    const price = form.price.value;
 
     const bookObj = {
       bookTitle,
@@ -50,6 +51,7 @@ const UploadBook = () => {
       category,
       bookDescription,
       bookPDFURL,
+      price,
     };
 
     console.log(bookObj);
@@ -148,6 +150,20 @@ const UploadBook = () => {
             id="bookDescription"
             name="bookDescription"
             placeholder="Write your book description..."
+            required
+            className="w-full"
+            rows={6}
+          />
+        </div>
+        {/*price*/}
+        <div className="">
+          <div className="mb-2 block">
+            <Label htmlFor="price" value="Price" />
+          </div>
+          <TextInput
+            id="price"
+            name="price"
+            placeholder="Price..."
             required
             className="w-full"
             rows={6}

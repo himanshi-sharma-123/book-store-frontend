@@ -12,6 +12,7 @@ const EditBooks = () => {
     category,
     bookDescription,
     bookPDFURL,
+    price,
   } = useLoaderData();
   const bookCategories = [
     "Fiction",
@@ -38,7 +39,7 @@ const EditBooks = () => {
   );
 
   const handleChangeSelectedValue = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setSelectedBookCategory(event.target.value);
   };
 
@@ -52,6 +53,7 @@ const EditBooks = () => {
     const category = form.categoryName.value;
     const bookDescription = form.bookDescription.value;
     const bookPDFURL = form.bookPDFURL.value;
+    const price = form.price.value;
 
     const updateBookObj = {
       bookTitle,
@@ -60,6 +62,7 @@ const EditBooks = () => {
       category,
       bookDescription,
       bookPDFURL,
+      price,
     };
 
     // update a book
@@ -74,8 +77,6 @@ const EditBooks = () => {
       .then((data) => {
         alert("Book uploaded Successfully!!");
       });
-
-    console.log(bookObj);
   };
   return (
     <div className="px-4 my-12">
@@ -168,6 +169,22 @@ const EditBooks = () => {
           />
         </div>
 
+        {/*price*/}
+        <div className="flex gap-8">
+          <div className="lg:w-1/2">
+            <div className="mb-2 block">
+              <Label htmlFor="price" value="Price" />
+            </div>
+            <TextInput
+              id="price"
+              type="text"
+              placeholder="Price"
+              required
+              name="price"
+              defaultValue={price}
+            />
+          </div>
+        </div>
         {/*book PDF Link */}
         <div>
           <div className="mb-2 block">

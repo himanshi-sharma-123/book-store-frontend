@@ -12,7 +12,7 @@ const ManageBooks = () => {
 
   // delete a book
   const handleDelete = (id) => {
-    console.log(id);
+    // console.log(id);
     fetch(`http://localhost:5000/book/${id}`, {
       method: "DELETE",
     })
@@ -49,7 +49,7 @@ const ManageBooks = () => {
 
               <Table.Cell>{book.authorName}</Table.Cell>
               <Table.Cell>{book.category}</Table.Cell>
-              <Table.Cell>$10.00</Table.Cell>
+              <Table.Cell>${book.price}</Table.Cell>
               <Table.Cell>
                 <Link
                   to={`/admin/dashboard/edit-books/${book._id}`}
