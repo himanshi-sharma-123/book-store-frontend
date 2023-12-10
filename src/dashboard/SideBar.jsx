@@ -11,11 +11,19 @@ import {
 } from "react-icons/hi";
 import { BiBuoy } from "react-icons/bi";
 import userImg from "../assets/profile.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../contact/AuthProvider";
 const SideBar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <Sidebar aria-label="Sidebar with content separator example">
-      <Sidebar.Logo href="#" img={userImg} imgAlt="Flowbite logo">
-        Book Store
+      <Sidebar.Logo
+        href="#"
+        img={user?.photoURL}
+        imgAlt="Flowbite logo"
+        className="w-16 h-16"
+      >
+        <p>{user?.displayName || "Demo user"}</p>
       </Sidebar.Logo>
 
       <Sidebar.Items>
