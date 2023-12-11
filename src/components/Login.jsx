@@ -92,7 +92,7 @@ const Login = () => {
 
                 <div class="relative">
                   <button className="bg-blue-500 text-white rounded-md px-6 py-2">
-                    Login In
+                    Log In
                   </button>
                 </div>
               </form>
