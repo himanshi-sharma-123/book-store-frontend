@@ -57,15 +57,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/dashboard/upload",
-        element: <UploadBook />,
+        element: (
+          <PrivateRoute>
+            <UploadBook />{" "}
+          </PrivateRoute>
+        ),
       },
       {
         path: "/admin/dashboard/manage",
-        element: <ManageBooks />,
+        element: (
+          <PrivateRoute>
+            <ManageBooks />{" "}
+          </PrivateRoute>
+        ),
       },
       {
         path: "/admin/dashboard/edit-books/:id",
-        element: <EditBooks />,
+        element: (
+          <PrivateRoute>
+            <EditBooks />{" "}
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/book/${params.id}`),
       },
